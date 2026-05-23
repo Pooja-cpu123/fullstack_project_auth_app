@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login & Register</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #667eea, #764ba2);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        width: 350px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #667eea;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #5a67d8;
+    }
+
+    .toggle {
+        text-align: center;
+        margin-top: 15px;
+        cursor: pointer;
+        color: #667eea;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div id="loginForm">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+        <div class="toggle" onclick="showRegister()">Don't have an account? Register</div>
+    </div>
+
+    <div id="registerForm" style="display:none;">
+        <h2>Register</h2>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <button onclick="register()">Register</button>
+        <div class="toggle" onclick="showLogin()">Already have an account? Login</div>
+    </div>
+</div>
+
+<script>
+function showRegister() {
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('registerForm').style.display = 'block';
+}
+
+function showLogin() {
+    document.getElementById('registerForm').style.display = 'none';
+    document.getElementById('loginForm').style.display = 'block';
+}
+
+function login() {
+    alert("Login successful (demo)");
+}
+
+function register() {
+    alert("Registered successfully (demo)");
+}
+</script>
+
+</body>
+</html>
